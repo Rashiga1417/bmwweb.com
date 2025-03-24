@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW - Animated Cars</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 50px; /* Increased padding for a bigger header */
+            background: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100000;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 35px;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #ff4d4d;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #home video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .overlay-text {
+            position: relative;
+            font-size: 80px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #ff4d4d;
+            text-shadow: 0 0 20px rgba(255, 77, 77, 0.7);
+            opacity: 0;
+            animation: fadeInUp 2s ease-in-out forwards;
+            transition: color 0.3s ease;
+        }
+
+        .overlay-text:hover {
+            color: white;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .explore-button {
+            background: #ff4d4d;
+            border: none;
+            padding: 12px 24px;
+            font-size: 22px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            border-radius: 30px;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeInUp 2s ease-in-out forwards 0.5s;
+        }
+
+        .explore-button:hover {
+            background: white;
+            color: #ff4d4d;
+            transform: scale(1.1);
+        }
+
+        .section-content {
+            position: relative;
+            font-size: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .overlay-text {
+                font-size: 50px;
+            }
+
+            .explore-button {
+                font-size: 18px;
+                padding: 10px 20px;
+            }
+
+            header {
+                padding: 30px 30px; /* Adjusted for mobile */
+            }
+            .login {
+                margin-left: 1000px; /* Adjust the value to increase spacing */
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+       <h1>BMW</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#models">Models</a></li>
+                <li><a href="#contact-us">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <video autoplay loop muted>
+            <source src="assets\167659-837413029.mp4" type="video/mp4">
+        </video>
+        <h2 class="overlay-text">Welcome to BMW</h2>
+        <button class="explore-button" onclick="scrollToSection('models')">Explore Now</button>
+    </section>
+
+    <section id="about">
+        <style>
+            #about {
+                background: #2b0009;
+                color: white;
+                padding: 50px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            h2 {
+                margin-bottom: 30px;
+                text-align: center;
+                font-size: 28px;
+            }
+    
+            p {
+                text-align: center;
+                max-width: 800px;
+                margin-bottom: 40px;
+                font-size: 16px;
+                line-height: 1.6;
+            }
+    
+            .slider {
+                display: flex;
+                overflow-x: auto;
+                scroll-behavior: smooth;
+                width: 90%;
+                margin: 20px auto;
+                padding: 10px;
+                background: #2b0009;
+                border-radius: 10px;
+                transition: background 0.3s ease;
+            }
+    
+            .slider:hover {
+                background: #4d0014;
+            }
+    
+            .slider img {
+                width: 300px;
+                margin: 0 10px;
+                border-radius: 10px;
+                transition: transform 0.3s ease;
+            }
+    
+            .slider img:hover {
+                transform: scale(1.1);
+            }
+        </style>
+    
+        <h2>About BMW</h2>
+        <p>BMW (Bayerische Motoren Werke AG) is a German multinational company that produces luxury vehicles and motorcycles. Founded in 1916, BMW has a long history of innovation in automotive engineering. The company is known for its high-performance cars, precision engineering, and luxury design. BMW also leads in electric vehicle technology with its i-Series models. The brand's philosophy revolves around driving pleasure, technological advancement, and sustainability.</p>
+    
+        <h2>BMW Series & Models</h2>
+        <div class="slider">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/198567/3-series-lwb-exterior-right-front-three-quarter.jpeg?isig=0&q=80" alt="BMW 3 Series">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/175183/new-5-series-exterior-right-front-three-quarter.jpeg?isig=0&q=80" alt="BMW 5 Series">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/152681/x5-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80" alt="BMW X5">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/149075/z4-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80" alt="BMW Z4">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/132513/7-series-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80" alt="BMW 7 Series">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/179903/x3-exterior-right-front-three-quarter-7.jpeg?isig=0&q=80" alt="BMW X3">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/135697/m340i-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80" alt="BMW M3">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/192747/m5-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80" alt="BMW M5">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/41375/x6-exterior-right-front-three-quarter.jpeg?q=80" alt="BMW X6">
+            <img src="https://imgd.aeplcdn.com/664x374/cw/ec/18023/BMW-i8-Exterior-114972.jpg?wm=0&q=80" alt="BMW i8">
+        </div>
+    </section>
+    <section id="models">
+        <style>
+            #models {
+                background: #1a1a1a;
+                color: white;
+                padding: 60px 10%;
+                text-align: center;
+            }
+    
+            h2 {
+                font-size: 36px;
+                margin-bottom: 40px;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+    
+            .grid-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 70px; /* Adds equal spacing between images */
+                max-width: 3400px;
+                margin: 0 auto;
+            }
+    
+            .model {
+                position: relative;
+                width: 100%; /* Ensures all images have equal width */
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+    
+            .model:hover {
+                transform: scale(1.05);
+                box-shadow: 0 15px 35px rgba(255, 255, 255, 0.2);
+            }
+    
+            .model img {
+                width: 100%;
+                height: 450px; /* Increased height for better visuals */
+                object-fit: cover;
+                display: block;
+                border-radius: 15px;
+            }
+    
+            .overlay {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 70px;
+                background: rgba(0, 0, 0, 0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: height 0.3s ease;
+            }
+    
+            .model:hover .overlay {
+                height: 100%;
+            }
+    
+            .overlay h3 {
+                color: #fff;
+                font-size: 26px;
+                font-weight: bold;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+    
+            .model:hover .overlay h3 {
+                opacity: 1;
+            }
+    
+            .see-more-btn {
+                background: #5a0202;
+                color: black;
+                border: none;
+                padding: 16px 32px;
+                font-size: 22px;
+                font-weight: bold;
+                margin-top: 50px;
+                cursor: pointer;
+                border-radius: 12px;
+                transition: background 0.3s ease;
+                text-decoration: none;
+                display: inline-block;
+            }
+    
+            .see-more-btn:hover {
+                background: #d6312c;
+            }
+    
+            @media (max-width: 1024px) {
+                .grid-container {
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+    
+                .model {
+                    width: 45%;
+                }
+            }
+    
+            @media (max-width: 768px) {
+                .grid-container {
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+                .model {
+                    width: 100%;
+                    height: auto;
+                }
+    
+                .model img {
+                    height: auto;
+                }
+            }
+        </style>
+
+        <h2>BMW Models Showcase</h2>
+        <div class="grid-container">
+            <div class="model" style="align-self: flex-start;">
+                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/198567/3-series-lwb-exterior-right-front-three-quarter.jpeg?isig=0&q=80" alt="BMW 3 Series">
+                <div class="overlay"><h3>BMW 3 Series</h3></div>
+            </div>
+            <div class="model" style="align-self: center;">
+                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/175183/new-5-series-exterior-right-front-three-quarter.jpeg?isig=0&q=80" alt="BMW 5 Series">
+                <div class="overlay"><h3>BMW 5 Series</h3></div>
+            </div>
+            <div class="model" style="align-self: flex-end;">
+                <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/152681/x5-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80" alt="BMW X5">
+                <div class="overlay"><h3>BMW X5</h3></div>
+            </div>
+        </div>
+    
+        <a href="bmw-all-models.html" class="see-more-btn">See More</a>
+    </section>
+    <section id="contact-us">
+        <style>
+            /* Contact Us Section Styling */
+            #contact-us {
+                position: relative;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: url('bmw.webp') no-repeat center center/cover;
+                overflow: hidden;
+            }
+    
+            /* Moving Car Animation */
+            .moving-car {
+                position: absolute;
+                bottom: 10%;
+                left: -20%;
+                width: 300px;
+                animation: carMove 10s linear infinite;
+            }
+    
+            @keyframes carMove {
+                0% { left: -20%; }
+                50% { left: 50%; transform: scale(1.1); }
+                100% { left: 120%; }
+            }
+    
+            /* Glassmorphic Form Styling */
+            .form-container {
+                position: relative;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                padding: 40px;
+                border-radius: 15px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+                width: 400px;
+                text-align: center;
+                z-index: 10;
+                animation: fadeIn 1.5s ease-in-out;
+            }
+    
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(30px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+    
+            /* Input Fields */
+            .form-container input,
+            .form-container textarea {
+                width: 100%;
+                padding: 15px;
+                margin-top: 10px;
+                border: none;
+                border-radius: 10px;
+                font-size: 16px;
+                background: rgba(255, 255, 255, 0.2);
+                color: #fff;
+                outline: none;
+            }
+    
+            /* Button Styling */
+            .form-container button {
+                width: 100%;
+                padding: 15px;
+                margin-top: 20px;
+                border: none;
+                border-radius: 10px;
+                background: linear-gradient(45deg, #712f02, #ff6600);
+                color: white;
+                font-size: 18px;
+                cursor: pointer;
+                transition: 0.3s ease-in-out;
+            }
+    
+            .form-container button:hover {
+                background: linear-gradient(45deg, #712f02, #310101);
+                transform: scale(1.05);
+            }
+    
+            /* Placeholder Styling */
+            .form-container input::placeholder,
+            .form-container textarea::placeholder {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        </style>
+    
+        <div class="form-container">
+            <h2 style="color: white;">Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        
+    </section>
+    
+    
+    
+        
+</body>
+</html>

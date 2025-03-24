@@ -1,0 +1,149 @@
+<section id="all-models">
+    <style>
+        body {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 100px 10%;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 200px;
+            justify-content: center;
+            align-items: stretch;
+        }
+
+        .model {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .model:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .model img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            border-radius: 15px;
+        }
+
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: height 0.3s ease;
+        }
+
+        .model:hover .overlay {
+            height: 100%;
+        }
+
+        .overlay h3 {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .model:hover .overlay h3 {
+            opacity: 1;   
+        }
+        .see-more-btn {
+            display: inline-block;
+            background-color: rgba(255, 255, 0, 0.511);
+            color: black;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px; /* Adds space above */
+            text-align: center;
+        }
+        
+        .see-more-btn:hover {
+            background-color: rgb(65, 4, 4);
+        }
+        
+
+    </style>
+
+    <h2>All BMW Models</h2>
+    <div class="grid-container">
+        <div class="model">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/198567/3-series-lwb-exterior-right-front-three-quarter.jpeg?isig=0&q=80" alt="BMW 3 Series">
+            <div class="overlay"><h3>BMW 3 Series</h3></div>
+        </div>
+        <div class="model">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/175183/new-5-series-exterior-right-front-three-quarter.jpeg?isig=0&q=80" alt="BMW 5 Series">
+            <div class="overlay"><h3>BMW 5 Series</h3></div>
+        </div>
+        <div class="model">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/152681/x5-exterior-right-front-three-quarter-5.jpeg?isig=0&q=80" alt="BMW X5">
+            <div class="overlay"><h3>BMW X5</h3></div>
+        </div>
+        <div class="model">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/149075/z4-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80" alt="BMW Z4">
+            <div class="overlay"><h3>BMW Z4</h3></div>
+        </div>
+        <div class="model">
+            <img src="https://imgd.aeplcdn.com/664x374/n/cw/ec/132513/7-series-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80" alt="BMW 7 Series">
+            <div class="overlay"><h3>BMW 7 Series</h3></div>
+        </div>
+        <div class="model">
+            <img src="https://imgd.aeplcdn.com/370x208/n/cw/ec/135681/xm-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80" alt="BMW 7 Series">
+            <div class="overlay"><h3>BMW XM Series</h3></div>
+        </div>
+        <div class="model">
+            <img src="https://imgd.aeplcdn.com/370x208/n/cw/ec/109123/i4-exterior-right-front-three-quarter.jpeg?isig=0&q=80" alt="BMW 7 Series">
+            <div class="overlay"><h3>BMW X4 Series</h3></div>
+        </div>
+        <div class="model">
+            <img src="https://imgd.aeplcdn.com/370x208/n/cw/ec/140585/ix1-exterior-right-front-three-quarter-25.jpeg?isig=0&q=80" alt="BMW 7 Series">
+            <div class="overlay"><h3>BMW iX7 Series</h3></div>
+        </div>
+        <div class="model">
+            <img src="https://imgd.aeplcdn.com/370x208/n/cw/ec/48034/2-series-gran-coupe-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80" alt="BMW 7 Series">
+            <div class="overlay"><h3>BMW 2 Series</h3></div>
+        </div>
+        <div class="model">
+            <img src="https://imgd.aeplcdn.com/370x208/n/cw/ec/109123/i4-exterior-right-front-three-quarter.jpeg?isig=0&q=80" alt="BMW 7 Series">
+            <div class="overlay"><h3>BMW i4 Series</h3></div>
+        </div>
+        <div class="model">
+            <img src="https://imgd.aeplcdn.com/370x208/n/cw/ec/47278/m8-exterior-right-front-three-quarter-2.jpeg?isig=0&q=80" alt="BMW 7 Series">
+            <div class="overlay"><h3>BMW M8 Series</h3></div>
+        </div>
+        <div class="model">
+            <img src="https://imgd.aeplcdn.com/370x208/n/cw/ec/136217/x7-exterior-right-front-three-quarter-8.jpeg?isig=0&q=80" alt="BMW 7 Series">
+            <div class="overlay"><h3>BMW X7 Series</h3></div>
+        </div>
+    </div>
+    <div class="button-container">
+        <a href="home.html" class="see-more-btn">Back</a>
+    </div>
+    
+</section>
